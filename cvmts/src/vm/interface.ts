@@ -1,4 +1,4 @@
-import { VMState } from '@computernewb/superqemu';
+import { VMState } from '@dragonterror/superqemu';
 import { VMDisplay } from '../display/interface.js';
 import { EventEmitter } from 'node:events';
 

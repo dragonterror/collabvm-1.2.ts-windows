@@ -3,7 +3,7 @@ import IConfig from './IConfig.js';
 import * as fs from 'fs';
 import CollabVMServer from './CollabVMServer.js';
 
-import { QemuVmDefinition } from '@computernewb/superqemu';
+import { QemuVmDefinition } from '@dragonterror/superqemu';
 
 import AuthManager from './AuthManager.js';
 import WSServer from './net/ws/WSServer.js';
