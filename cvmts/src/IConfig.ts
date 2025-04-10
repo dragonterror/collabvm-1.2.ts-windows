@@ -24,9 +24,6 @@ export default interface IConfig {
 			vote: boolean;
 		};
 	};
-	vm: {
-		type: 'qemu' | 'vncvm';
-	};
 	qemu: {
 		qemuArgs: string;
 		vncPort: number;

@@ -9,10 +9,10 @@ This fork is meant to host in windows (I didn't really change much just fixed a 
 
 The CollabVM server requires the following to be installed on your server:
 
-1. Node.js (obviously)
-2. QEMU (Unless you just want to use a VNC Connection as your VM) (Hasnt worked for me)
+1. [Node.js](https://nodejs.org/en/download)
+2. [QEMU](https://www.qemu.org/download/#windows)
 3. A Rust toolchain (e.g: [rustup](https://rustup.rs))
-4. NASM assembler
+4. [NASM assembler](https://www.nasm.us/)
 
 ## Running
 ### Running Automatically
