@@ -4,7 +4,6 @@ port = 6004
 # Whether the server is behind a reverse proxy, like NGINX
 proxying = false
 # IPs allowed to access the server in proxy mode.
-# 99% of the time this will only be 127.0.0.1
 proxyAllowedIps = ["127.0.0.1"]
 # Whether the Origin header check is enabled.
 origin = false
@@ -36,11 +35,11 @@ callForReset = false
 vote = true
 
 # QEMU options
-# Only used if vm.type is set to "qemu"
 [qemu]
-qemuArgs = "qemu-system-x86_64 -accel whpx,kernel-irqchip=off "
+qemuArgs = "qemu-system-x86_64 -accel whpx,kernel-irqchip=off"
 # VNC port to be used for this VM. Must be unique among all VMs.
 vncPort = 5900
+# Whether or not to use snapshot mode.
 snapshots = true
 
 [mysql]
