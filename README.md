@@ -14,8 +14,8 @@ The CollabVM server requires the following to be installed on your server:
 3. A Rust toolchain (e.g: [rustup](https://rustup.rs))
 4. NASM assembler
 
-## Running
-
+### Running Manually
+1. Run: `git clone --recursive https://github.com/dragonterror/collabvm-1.2.ts-windows.git`
 1. Copy config.example.toml to config.toml, and fill out fields
 2. Install dependencies: `yarn`
 3. Build it: `yarn build`
