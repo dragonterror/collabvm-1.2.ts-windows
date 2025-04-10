@@ -9,7 +9,6 @@ import AuthManager from './AuthManager.js';
 import WSServer from './net/ws/WSServer.js';
 import { User } from './User.js';
 import VM from './vm/interface.js';
-import VNCVM from './vm/vnc/VNCVM.js';
 import GeoIPDownloader from './GeoIPDownloader.js';
 import pino from 'pino';
 import { Database } from './Database.js';
@@ -71,31 +70,15 @@ async function start() {
 		await db.init();
 	}
 	let banmgr = new BanManager(Config.bans, db);
-	switch (Config.vm.type) {
-		case 'qemu': {
-			// Fire up the VM
-			let def: QemuVmDefinition = {
-				id: Config.collabvm.node,
-				command: Config.qemu.qemuArgs,
-				snapshot: Config.qemu.snapshots,
-				forceTcp: false,
-				vncHost: '127.0.0.1',
-				vncPort: Config.qemu.vncPort,
-			};
-
-			VM = new QemuVMShim(def, Config.qemu.resourceLimits);
-			break;
-		}
-		case 'vncvm': {
-			VM = new VNCVM(Config.vncvm);
-			break;
-		}
-		default: {
-			logger.error(`Invalid VM type in config: ${Config.vm.type}`);
-			process.exit(1);
-			return;
-		}
-	}
+	let def: QemuVmDefinition = {
+		id: Config.collabvm.node,
+		command: Config.qemu.qemuArgs,
+		snapshot: Config.qemu.snapshots,
+		forceTcp: false,
+		vncHost: '127.0.0.1',
+		vncPort: Config.qemu.vncPort,
+	};
+	VM = new QemuVMShim(def);
 	process.on('SIGINT', async () => await stop());
 	process.on('SIGTERM', async () => await stop());
 
