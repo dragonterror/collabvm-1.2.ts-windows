@@ -17,8 +17,9 @@ The CollabVM server requires the following to be installed on your server:
 ## Running
 ### Running Automatically
 1. Run: `git clone --recursive https://github.com/dragonterror/collabvm-1.2.ts-windows.git`
-2. Run `make.bat` (You can close any windows it makes after it is done!)
-3. Run `run.bat` to start it whenever you like.
+2. Copy config.example.toml to config.toml, and fill out fields
+3. Run `make.bat` (You can close any windows it makes after it is done!)
+4. Run `run.bat` to start it whenever you like.
 
 ### Running Manually
 1. Run: `git clone --recursive https://github.com/dragonterror/collabvm-1.2.ts-windows.git`
